@@ -3,20 +3,7 @@
 require_once('config.php');
 // var_dump($_POST);
 
-if ($_POST) {
-    $name = trim($_POST['name']);
-    $message = trim($_POST['message']);
 
-    if ($name && $message) {
-        $stmt = $pdo->prepare("INSERT INTO messages (name, message) VALUES (?, ?)");
-        $stmt->execute([$name, $message]);
-
-        header('Location: index.php');
-        exit;
-    } else {
-        $error = "Пожалуйста, заполните все поля.";
-    }
-}
 
 $stmt = $pdo->query("SELECT * FROM messages ORDER BY created_at DESC");
 $messages = $stmt->fetchALL(PDO::FETCH_ASSOC);
@@ -45,9 +32,20 @@ $messages = $stmt->fetchALL(PDO::FETCH_ASSOC);
         <?php else: ?>
             <?php foreach ($messages as $msg): ?>
                 <div class="message">
-                    <div class="name"> <?= htmlspecialchars($msg['name']) ?> </div>
-                    <div><?= htmlspecialchars($msg['message']) ?></div>
-                    <div class="date"> <?= $msg['created_at'] ?> </div>
+                    <div class="name"> 
+                        <?= htmlspecialchars($msg['name']) ?> 
+                    </div>
+                    <div>
+                        <?= htmlspecialchars($msg['message']) ?>
+                    </div>
+                    <div class="date"> 
+                        <?= $msg['created_at'] ?> 
+                    </div>
+                        <a href="delete.php?id=<?= $msg['id'] ?>" 
+                            class = "message_delete"
+                            onclick="return confirm('Вы уверены, что хотите удалить это сообщение <?= $msg['name'];?> ?')">
+                            Удалить
+                        </a>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>

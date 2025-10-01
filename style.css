@@ -3,12 +3,56 @@
     box-sizing: border-box;
 }
 
-body { font-family: Arial; margin:40px; background: #f0f0f0;}
-.container { max-width: 600px; margin:auto; background: white; padding: 20px; border-radius: 8px; }
-.message { padding: 15px; border-bottom: 1px solid #eee; }
-.name { font-weight: bold; color: #333; }
-.date { font-size: 0.8em; color: #888; }
-input, textarea { width: 100%; padding: 8px; margin: 5px 0 15px; }
-button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
-button:hover { background: #0056b3; }
-.error { color: red; }
+body { 
+    font-family: Arial; 
+    margin:40px; 
+    background: #f0f0f0;
+}
+.container { 
+    max-width: 600px; 
+    margin:auto; 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+}
+.message { 
+    padding: 15px; 
+    border-bottom: 1px solid #eee; 
+}
+.name { 
+    font-weight: bold; 
+    color: #333; 
+}
+.date { 
+    font-size: 0.8em; 
+    color: #888; 
+}
+input, textarea { 
+    width: 100%; 
+    padding: 8px; 
+    margin: 5px 0 15px; 
+}
+button { 
+    padding: 10px 20px; 
+    background: #007bff; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+}
+button:hover { 
+    background: #0056b3; 
+}
+.error { 
+    color: red; 
+}
+
+.message_delete {
+    color: rgb(255, 47, 47);
+    text-decoration: none;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.message_delete:hover {
+    color: rgb(255, 153, 0);
+}

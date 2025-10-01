@@ -1,4 +1,5 @@
 <?php
+
 require_once('config.php');
 // var_dump($_POST);
 
@@ -27,25 +28,11 @@ $messages = $stmt->fetchALL(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        
-        body { font-family: Arial; margin:40px; background: #f0f0f0;}
-        .container { max-width: 600px; margin:auto; background: white; padding: 20px; border-radius: 8px; }
-        .message { padding: 15px; border-bottom: 1px solid #eee; }
-        .name { font-weight: bold; color: #333; }
-        .date { font-size: 0.8em; color: #888; }
-        input, textarea { width: 100%; padding: 8px; margin: 5px 0 15px; }
-        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
-        button:hover { background: #0056b3; }
-        .error { color: red; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-            <form method="POST">
+            <form method="POST" action="add.php">
             <input type="text" name="name" placeholder="Ваше имя" required>
             <textarea name="message" rows="4" placeholder="Ваше сообщение" required></textarea>
             <button type="submit">Отправить</button>
@@ -59,8 +46,8 @@ $messages = $stmt->fetchALL(PDO::FETCH_ASSOC);
             <?php foreach ($messages as $msg): ?>
                 <div class="message">
                     <div class="name"> <?= htmlspecialchars($msg['name']) ?> </div>
-                    <div><?= htmlspecialchars($msd['message']) ?></div>
-                    <div class="date"> <?= $msd['created-at'] ?> </div>
+                    <div><?= htmlspecialchars($msg['message']) ?></div>
+                    <div class="date"> <?= $msg['created_at'] ?> </div>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>

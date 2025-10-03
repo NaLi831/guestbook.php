@@ -32,14 +32,15 @@ input, textarea {
     padding: 8px; 
     margin: 5px 0 15px; 
 }
-button { 
+.button_On { 
     padding: 10px 20px; 
     background: #007bff; 
     color: white; 
     border: none; 
+    border-radius: 4px;
     cursor: pointer; 
 }
-button:hover { 
+.button_On:hover { 
     background: #0056b3; 
 }
 .error { 
@@ -55,4 +56,69 @@ button:hover {
 
 .message_delete:hover {
     color: rgb(255, 153, 0);
+}
+
+.btn {
+    padding: 7px 10px;
+    background: #007bff;
+    color: white;
+    border: none; 
+    border-radius: 4px;
+    cursor: pointer; 
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+h2 { 
+    text-align: center; 
+    color: #333; 
+}
+
+label { 
+    display: block; 
+    margin-top: 15px; 
+    font-weight: bold; 
+}
+
+.input_edit, .textarea_edit {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn_edit {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-save_edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-save_edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-cancel_edit {
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.btn-cancel_edit:hover {
+    background-color: #5a6268;
 }

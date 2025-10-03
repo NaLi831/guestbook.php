@@ -3,8 +3,6 @@
 require_once('config.php');
 // var_dump($_POST);
 
-
-
 $stmt = $pdo->query("SELECT * FROM messages ORDER BY created_at DESC");
 $messages = $stmt->fetchALL(PDO::FETCH_ASSOC);
 ?>
@@ -19,10 +17,10 @@ $messages = $stmt->fetchALL(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="container">
-            <form method="POST" action="add.php">
+        <form method="POST" action="add.php">
             <input type="text" name="name" placeholder="Ваше имя" required>
             <textarea name="message" rows="4" placeholder="Ваше сообщение" required></textarea>
-            <button type="submit">Отправить</button>
+            <button type="submit" class="button_On">Отправить</button>
         </form>
 
         <h3>Сообщения (<?= count($messages)?>):</h3>
@@ -46,9 +44,14 @@ $messages = $stmt->fetchALL(PDO::FETCH_ASSOC);
                             onclick="return confirm('Вы уверены, что хотите удалить это сообщение <?= $msg['name'];?> ?')">
                             Удалить
                         </a>
+                    <form action="edit.php" method="GET" style="display: inline;">
+                        <input type="hidden" name="id" value="<?= $msg['id'] ?>">
+                        <button type="submit" class="btn btn-edit">Редактировать</button>
+                    </form>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
+        
     </div>
 </body>
 </html>

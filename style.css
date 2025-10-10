@@ -3,35 +3,88 @@
     box-sizing: border-box;
 }
 
-body { 
+.body_index { 
     font-family: Arial; 
-    margin:40px; 
+    margin: 40px; 
     background: #f0f0f0;
 }
-.container { 
+
+.container_index { 
     max-width: 600px; 
-    margin:auto; 
+    margin: auto; 
     background: white; 
     padding: 20px; 
-    border-radius: 8px; 
+    border-radius: 8px;
 }
+
+.index_i { 
+    text-align: center; 
+    color: #333; 
+}
+
 .message { 
     padding: 15px; 
     border-bottom: 1px solid #eee; 
 }
-.name { 
+
+.message-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.username { 
     font-weight: bold; 
     color: #333; 
 }
+
 .date { 
     font-size: 0.8em; 
     color: #888; 
 }
-input, textarea { 
+
+.text_ar_inx {
     width: 100%; 
     padding: 8px; 
     margin: 5px 0 15px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px;
 }
+
+.auth-bar { 
+    text-align: right; 
+    margin-bottom: 20px; 
+}
+.auth-bar a { 
+    margin-left: 15px; 
+    text-decoration: none; 
+    color: #007BFF; 
+}
+.auth-bar a:hover { 
+    color: #0056b3; 
+    text-decoration: none; 
+}
+
+.form_inx { 
+    margin: 20px 0; 
+}
+
+.actions a { 
+    text-decoration: none; 
+    color: #007BFF; 
+}
+
+.actions a:hover { 
+    text-decoration: none; 
+    color: #0056b3;
+}
+.admin-tag { 
+    background: #ffc107; 
+    padding: 2px 6px; 
+    border-radius: 3px; 
+    font-size: 0.8em; 
+}
+
 .button_On { 
     padding: 10px 20px; 
     background: #007bff; 
@@ -40,45 +93,73 @@ input, textarea {
     border-radius: 4px;
     cursor: pointer; 
 }
+
 .button_On:hover { 
     background: #0056b3; 
-}
-.error { 
-    color: red; 
 }
 
 .message_delete {
     color: rgb(255, 47, 47);
     text-decoration: none;
     margin-top: 5px;
-    font-size: 12px;
+    margin-left: 10px;
+    font-size: 14px;
+    background:none;
+    border:none; 
+    cursor:pointer;
+    padding:0;
 }
 
 .message_delete:hover {
     color: rgb(255, 153, 0);
 }
 
-.btn {
-    padding: 7px 10px;
-    background: #007bff;
-    color: white;
+.in_log_but {
+    text-decoration: none;
+    background: none;
     border: none; 
-    border-radius: 4px;
-    cursor: pointer; 
-    margin-left: 20px;
-    margin-top: 5px;
+    color: #007BFF;
+    margin-left: 10px;
+    font-size: 16px;
 }
 
-.btn:hover {
-    background: #0056b3;
+.in_log_but:hover {
+    color: #0056b3;
 }
 
-h2 { 
+.flash {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 20px;
+
+}
+
+
+
+
+
+
+.body_edit { 
+    font-family: Arial; 
+    margin:40px; 
+    background: #f5f5f5;
+}
+
+.container_edit { 
+    max-width: 700px;
+    margin: 0 auto;
+    background: white; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.Red_edit { 
     text-align: center; 
     color: #333; 
 }
 
-label { 
+.label_edit { 
     display: block; 
     margin-top: 15px; 
     font-weight: bold; 
@@ -92,6 +173,7 @@ label {
     border-radius: 4px;
     font-size: 16px;
 }
+
 
 .btn_edit {
     display: inline-block;
@@ -122,3 +204,160 @@ label {
 .btn-cancel_edit:hover {
     background-color: #5a6268;
 }
+
+
+
+
+
+
+
+.body_reg { 
+    font-family: Arial; 
+    background: #f0f0f0; 
+    padding: 50px; 
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.reg_reg { text-align: center; }
+
+.input_reg {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.but_reg {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.but_reg:hover { 
+    background: #0056b3; 
+}
+
+.error { 
+    background: #f8d7da; 
+    color: #721c24; 
+    padding: 10px; 
+    border-radius: 4px; 
+    margin: 15px 0; 
+}
+
+.success { 
+    background: #d4edda; 
+    color: #155724; 
+    padding: 10px; 
+    border-radius: 4px; 
+    margin: 15px 0; 
+}
+
+.login-link { 
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+.login-link a { 
+    color: #007BFF; 
+    text-decoration: none; 
+}
+
+
+
+
+
+
+.body_log { 
+    font-family: Arial; 
+    background: #f0f0f0;
+    padding: 50px; 
+}
+
+.form-container_log {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.log_log { 
+    text-align: center; 
+}
+
+.input_log {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.but_log {
+    width: 100%;
+    padding: 12px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.but_log:hover { 
+    background: #0056b3; 
+}
+
+.error_log { 
+    background: #f8d7da; 
+    color: #721c24; 
+    padding: 10px; 
+    border-radius: 4px; 
+    margin: 15px 0; 
+}
+
+.register-link_log { 
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+.register-link_log a { 
+    color: #007BFF; 
+    text-decoration: none; 
+}
+
+
+
+/*
+
+.name { 
+    font-weight: bold; 
+    color: #333; 
+}
+
+/*input { 
+    width: 100%; 
+    padding: 8px; 
+    margin: 5px 0 15px; 
+}
+
+.error { 
+    color: red; 
+}
+
+*/
+

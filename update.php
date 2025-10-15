@@ -1,32 +1,24 @@
 <?php
-
 require_once 'config.php';
+requireLogin();
 
 if ($_POST) {
     $id = $_POST['id'] ?? null;
-    $name = trim($_POST['name'] ?? '');
-    $message = trim($_POST['message'] ?? '');
+    $message_text = trim($_POST['message'] ?? '');
 
-    if (!$id || !is_numeric($id)) {
-        die("Некорректный ID");
-    }
-    if (empty($name) || empty($message)) {
-        die("Имя и сообщение не могут быть пустыми");
-    }
+    if (!$id || !is_numeric($id) || empty($message_text)) die("Некорректные данные");
 
-    $stmt = $pdo->prepare("UPDATE messages SET name = ?, message = ? WHERE id = ?");
-    $result = $stmt->execute([$name, $message, $id]);
+    $stmt = $pdo->prepare("SELECT user_id FROM messages WHERE id = ?");
+    $stmt->execute([$id]);
+    $msg = $stmt->fetch();
 
-    if ($result) {
+    if (!$msg) die("Сообщение не найдено");
+    requireOwnerOrAdmin($msg['user_id']);
 
-        header('Location: index.php?success=1');
-        exit;
-    } else {
-        die("Ошибка при обновлении");
-    }
-} else {
+    $stmt = $pdo->prepare("UPDATE messages SET message = ? WHERE id = ?");
+    $stmt->execute([$message_text, $id]);
 
-    header('Location: index.php');
+    header('Location: index.php?success=1');
     exit;
 }
 ?>
